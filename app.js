@@ -71,6 +71,21 @@ function step4(data) {
   console.log('Retrieved access token for user ' + username);
 }
 
+function query(access_token) {
+  makeRequest('GET', 'https://getpocket.com/v3/get', function(data) {
+    global.resp = data;
+    var unreadItems = Object.keys(data.list).length;
+    var wordCount = [].reduce.call(Object.values(data.list),
+          function(acc, val) { return acc + Number(val.word_count || 0) }, 0);
+    console.log('Unread items: ' + unreadItems);
+    console.log('Total word count of unread items: ' + wordCount);
+  }, {
+    'consumer_key': CONSUMER_KEY,
+    'access_token': access_token,
+    'state': 'unread',
+    'detailType': 'simple'
+  });
+}
 
 
 // TODO break this up into utils (makeRequest), auth part, and query part
