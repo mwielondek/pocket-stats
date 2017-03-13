@@ -76,7 +76,7 @@ function step4(data) {
 
 function query(access_token) {
   makeRequest('GET', 'https://getpocket.com/v3/get', function(data) {
-    global.resp = data;
+    // global.resp = data; // for interactive debugging
     var unreadItems = Object.keys(data.list).length;
     var wordCount = [].reduce.call(Object.values(data.list),
           function(acc, val) { return acc + Number(val.word_count || 0) }, 0);
