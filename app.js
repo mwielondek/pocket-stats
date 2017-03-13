@@ -69,6 +69,9 @@ function step4(data) {
   var access_token = data.access_token;
   var username = data.username;
   console.log('Retrieved access token for user ' + username);
+
+  console.log('Collecting statistics about your reading habits:\n\n');
+  query(access_token);
 }
 
 function query(access_token) {
@@ -78,7 +81,8 @@ function query(access_token) {
     var wordCount = [].reduce.call(Object.values(data.list),
           function(acc, val) { return acc + Number(val.word_count || 0) }, 0);
     console.log('Unread items: ' + unreadItems);
-    console.log('Total word count of unread items: ' + wordCount);
+    console.log('Total word count of unread items: ' + wordCount); // TODO calc reading time based on wpm
+    process.exit(0);
   }, {
     'consumer_key': CONSUMER_KEY,
     'access_token': access_token,
@@ -87,5 +91,7 @@ function query(access_token) {
   });
 }
 
+// entry point
+step1();
 
 // TODO break this up into utils (makeRequest), auth part, and query part
