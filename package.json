@@ -28,5 +28,8 @@
     "presets": [
       "latest"
     ]
+  },
+  "dependencies": {
+    "express": "^4.15.2"
   }
 }
