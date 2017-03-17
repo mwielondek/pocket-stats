@@ -2,13 +2,19 @@
   "name": "pocket-stats",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miloszw/pocket-stats.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "request": "^2.81.0"
-  }
+  "bugs": {
+    "url": "https://github.com/miloszw/pocket-stats/issues"
+  },
+  "homepage": "https://github.com/miloszw/pocket-stats#readme"
 }
