@@ -7,7 +7,7 @@ Install dependencies
 > `npm install`
 
 Run app
-> `npm app.js`
+> `node app.js`
 
 
 ## Current status
